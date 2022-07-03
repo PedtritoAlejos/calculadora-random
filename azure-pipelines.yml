@@ -9,6 +9,9 @@ trigger:
 pool: Default
   
 
+variables:
+- group: template-variable-group
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -22,4 +25,5 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
     echo val sonarCloudOrganization: $(sonarCloudOrganization) ##IT PRINTS 'sonarqube'
+     echo val sonarCloudOrganization: $(variables) ##IT PRINTS 'sonarqube'
   displayName: 'Run a multi-line script'
